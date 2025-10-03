@@ -4,7 +4,7 @@ from src.process_video import process_video
 
 CONFIG = {
     'video_path': './data/videos/video7.mp4',
-    'model_path': './data/models/yolov8n.pt',
+    'model_path': 'yolo11n.pt',
     'classes_path': './config/classes.txt',
     'target_classes': ['car', 'truck', 'bus', 'motorcycle'],
     'confidence_threshold': 0.3,
