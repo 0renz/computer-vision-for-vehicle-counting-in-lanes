@@ -1,14 +1,18 @@
 import cv2
 from src.setup_gui import SetupGUI
 from src.process_video import process_video
+from src.get_video_resolution import get_video_resolution
+
+VIDEO_PATH = './data/videos/teste-3.mp4'
+NATIVE_RES = get_video_resolution(VIDEO_PATH)
 
 CONFIG = {
-    'video_path': './data/videos/video7.mp4',
-    'model_path': 'yolo11n.pt',
+    'video_path': VIDEO_PATH,
+    'model_path': './data/models/yolov8n.pt',
     'classes_path': './config/classes.txt',
     'target_classes': ['car', 'truck', 'bus', 'motorcycle'],
     'confidence_threshold': 0.3,
-    'output_resolution': (848, 480), # Alterar a resolução conforme necessário (baseado no vídeo de exemplo)
+    'output_resolution': NATIVE_RES,
     'tracker': {
         'max_age': 60, # Aumentado para lidar melhor com oclusões
         'min_hits': 3,
